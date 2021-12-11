@@ -1,16 +1,17 @@
 import React from 'react';
 import '../App.css';
 
+const list = [
+    { id: '1', name: 'Frontend' },
+    { id: '2', name: 'Backend' },
+    { id: '3', name: 'Relational Database' },
+    { id: '4', name: 'MVC' },
+    { id: '5', name: 'RESTful APIs' },
+    { id: '6', name: 'Ruby on Rails' },
+    { id: '7', name: 'Go' },
+];
+
 const Search: React.FC = () => {
-    const list = [
-        { id: '1', name: 'Frontend' },
-        { id: '2', name: 'Backend' },
-        { id: '3', name: 'Relational Database' },
-        { id: '4', name: 'MVC' },
-        { id: '5', name: 'RESTful APIs' },
-        { id: '6', name: 'Ruby on Rails' },
-        { id: '7', name: 'Go' },
-    ];
 
     return (
         <>
