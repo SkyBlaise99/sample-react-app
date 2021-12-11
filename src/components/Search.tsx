@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../App.css';
 
 const list = [
@@ -22,6 +22,9 @@ const filterList = (list: any, query: string) => {
 };
 
 const Search: React.FC = () => {
+    const { search } = window.location;
+    const query = new URLSearchParams(search).get('s');
+    const [searchQuery, setSearchQuery] = useState(query || '');
     const filteredList = filterList(list, searchQuery);
 
     return (
@@ -30,7 +33,14 @@ const Search: React.FC = () => {
                 <label htmlFor="header-search">
                     <span className="visually-hidden">{'Search blog posts'}</span>
                 </label>
-                <input type="text" id="header-search" placeholder="Search blog posts" name="s" />
+                <input
+                    type="text"
+                    id="header-search"
+                    placeholder="Search list"
+                    name="s"
+                    value={searchQuery}
+                    onInput={(e) => setSearchQuery((e.target as HTMLInputElement).value)}
+                />
                 <button type="submit">{'Search'}</button>
             </form>
             <ul>
