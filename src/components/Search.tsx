@@ -11,7 +11,18 @@ const list = [
     { id: '7', name: 'Go' },
 ];
 
+const filterList = (list: any, query: string) => {
+    if (!query) {
+        return list;
+    }
+
+    return list.filter((item: any) => {
+        return item.name.toLowerCase().includes(query);
+    });
+};
+
 const Search: React.FC = () => {
+    const filteredList = filterList(list, searchQuery);
 
     return (
         <>
@@ -23,7 +34,7 @@ const Search: React.FC = () => {
                 <button type="submit">{'Search'}</button>
             </form>
             <ul>
-                {list.map((item) => (
+                {filteredList.map((item: any) => (
                     <li key={item.id}>{item.name}</li>
                 ))}
             </ul>
