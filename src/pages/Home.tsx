@@ -41,6 +41,7 @@ const Home: React.FC = () => {
                 </Button>
             )}
             <br />
+            <br />
             <Search />
         </>
     );
