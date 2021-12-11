@@ -1,4 +1,6 @@
 import BasicList from '../components/BasicList';
+import Search from '../components/Search';
+
 import React, { useState } from 'react';
 import Typewriter from 'typewriter-effect';
 import { Button } from '@material-ui/core';
@@ -38,6 +40,8 @@ const Home: React.FC = () => {
                     {'Yes'}
                 </Button>
             )}
+            <br />
+            <Search />
         </>
     );
 };
